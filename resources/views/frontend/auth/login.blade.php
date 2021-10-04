@@ -52,7 +52,8 @@
 
                             <div class="form-group row mb-0">
                                 <div class="col-md-8 offset-md-4">
-                                    <button class="btn btn-primary" type="submit">@lang('Login')</button>
+                                    <button class="btn btn-primary" type="button">@lang('Login')</button>
+                                    {{-- <button class="btn btn-primary" type="submit">@lang('Login')</button> --}}
 
                                     <x-utils.link :href="route('frontend.auth.password.request')" class="btn btn-link" :text="__('Forgot Your Password?')" />
                                 </div>

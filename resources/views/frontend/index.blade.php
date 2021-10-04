@@ -69,38 +69,60 @@
     <body>
         @include('includes.partials.read-only')
         @include('includes.partials.logged-in-as')
-        @include('includes.partials.announcements')
+        {{-- @include('includes.partials.announcements') --}}
 
-        <div id="app" class="flex-center position-ref full-height">
-            <div class="top-right links">
+        {{-- <div class="content">
+                @include('includes.partials.messages') --}}
+
+               <!-- Background Video-->
+        <video class="bg-video" playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop"><source src="{{ asset('mp4/bg.mp4') }}" type="video/mp4" /></video>
+        <!-- Masthead-->
+        <div class="masthead">
+            <div class="masthead-content text-white">
+                <div class="container-fluid px-4 px-lg-0">
+                    <h1 class="fst-italic lh-1 mb-4">B-arangay<br /> I-nformation<br /> S-ystem</h1>
+                    <p class="mb-5">Innovation, Responsibility, and Humanism. Serve Better !</p>
+                    {{-- <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+
+                        <div class="row input-group-newsletter">
+                            <div class="col"><input class="form-control" id="email" type="email" placeholder="Enter email address..." aria-label="Enter email address..." data-sb-validations="required,email" /></div>
+                            <div class="col-auto"><button class="btn btn-primary disabled" id="submitButton" type="submit">Notify Me!</button></div>
+                        </div>
+                        <div class="invalid-feedback mt-2" data-sb-feedback="email:required">An email is required.</div>
+                        <div class="invalid-feedback mt-2" data-sb-feedback="email:email">Email is not valid.</div>
+                        <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3 mt-2">Error sending message!</div></div>
+                    </form> --}}
+                </div>
+            </div>
+        </div>
+        <!-- Social Icons-->
+        <!-- For more icon options, visit https://fontawesome.com/icons?d=gallery&p=2&s=brands-->
+        <div class="social-icons">
+            <div class="d-flex flex-row flex-lg-column justify-content-center align-items-center h-100 mt-3 mt-lg-0">
                 @auth
                     @if ($logged_in_user->isUser())
                         <a href="{{ route('frontend.user.dashboard') }}">@lang('Dashboard')</a>
                     @endif
-
                     <a href="{{ route('frontend.user.account') }}">@lang('Account')</a>
                 @else
-                    <a href="{{ route('frontend.auth.login') }}">@lang('Login')</a>
-
+                    <div><a class="btn btn-dark" href="{{ route('frontend.auth.login') }}">Login</a>
+                        <a class=" btn btn-icon btn-dark m-2" href="{{ route('frontend.auth.login') }}">
+                            <i class="fas fa-sign-in-alt"></i></a>
+                    </div>
                     @if (config('boilerplate.access.user.registration'))
-                        <a href="{{ route('frontend.auth.register') }}">@lang('Register')</a>
+                        <div>
+                            <a class="btn btn-dark" href="{{ route('frontend.auth.register') }}">Register</a>
+                            <a class="btn btn-icon btn-dark m-2" href="{{ route('frontend.auth.register') }}">
+                                <i class="far fa-user-circle"></i></a></i>
+                            </a>
+                        </div>
                     @endif
                 @endauth
-            </div><!--top-right-->
 
-            <div class="content">
-                @include('includes.partials.messages')
+            </div>
+        </div>
+            {{-- </div><!--content--> --}}
 
-                <div class="title m-b-md">
-                    <example-component></example-component>
-                </div><!--title-->
-
-                <div class="links">
-                    <a href="http://laravel-boilerplate.com" target="_blank"><i class="fa fa-book"></i> @lang('Docs')</a>
-                    <a href="https://github.com/rappasoft/laravel-boilerplate" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-                </div><!--links-->
-            </div><!--content-->
-        </div><!--app-->
 
         @stack('before-scripts')
         <script src="{{ mix('js/manifest.js') }}"></script>
