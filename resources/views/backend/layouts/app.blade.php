@@ -15,13 +15,14 @@
     @stack('after-styles')
 </head>
 <body class="c-app">
-    @include('backend.includes.sidebar')
+    {{-- @include('backend.includes.sidebar') --}}
 
     <div class="c-wrapper c-fixed-components">
+
         @include('backend.includes.header')
         @include('includes.partials.read-only')
         @include('includes.partials.logged-in-as')
-        @include('includes.partials.announcements')
+        {{-- @include('includes.partials.announcements') --}}
 
         <div class="c-body">
             <main class="c-main">

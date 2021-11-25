@@ -1,0 +1,41 @@
+barangay
+
+blotter
+   Complainant
+   Suspect
+   Content
+   InsidentDate
+   InsidentAddress
+   Content
+   Date 
+
+hearing
+   Blotter id
+   Date
+   Hearings
+
+Citizen
+  First Name
+  Middle Name
+  Last Name
+  Addresss
+  Work
+  Work Address
+  Gender
+  Birthdate
+  
+Family
+  Head
+  Mother
+    children
+	
+sensus
+  Citizen
+  Family
+ 
+Indigent
+  Family
+
+Certificates
+  Citizen
+  Purpose

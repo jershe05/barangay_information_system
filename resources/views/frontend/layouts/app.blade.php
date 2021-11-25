@@ -22,7 +22,8 @@
     {{-- @include('includes.partials.announcements') --}}
 
     <div id="app">
-        @include('frontend.includes.nav')
+        <video class="bg-video" playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop"><source src="{{ asset('mp4/bg.mp4') }}" type="video/mp4" /></video>
+        {{-- @include('frontend.includes.nav') --}}
         @include('includes.partials.messages')
 
         <main>

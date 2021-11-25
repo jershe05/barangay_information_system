@@ -5,66 +5,61 @@
 @section('content')
     <div class="container py-4">
         <div class="row justify-content-center">
-            <div class="col-md-8">
-                <x-frontend.card>
-                    <x-slot name="header">
-                        @lang('Login')
-                    </x-slot>
+            <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>BIS Sign In</h3>
+                        </div>
+                        <div class="card-body">
+                            <form action="{{ route('frontend.auth.login') }}" method="POST">
+                                @csrf
+                                <div class="input-group form-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                    </div>
+                                    <input type="email"  name="email" class="form-control  form-control-lg" placeholder="email address">
 
-                    <x-slot name="body">
-                        <x-forms.post :action="route('frontend.auth.login')">
-                            <div class="form-group row">
-                                <label for="email" class="col-md-4 col-form-label text-md-right">@lang('E-mail Address')</label>
-
-                                <div class="col-md-6">
-                                    <input type="email" name="email" id="email" class="form-control" placeholder="{{ __('E-mail Address') }}" value="{{ old('email') }}" maxlength="255" required autofocus autocomplete="email" />
                                 </div>
-                            </div><!--form-group-->
-
-                            <div class="form-group row">
-                                <label for="password" class="col-md-4 col-form-label text-md-right">@lang('Password')</label>
-
-                                <div class="col-md-6">
-                                    <input type="password" name="password" id="password" class="form-control" placeholder="{{ __('Password') }}" maxlength="100" required autocomplete="current-password" />
+                                <div class="input-group form-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="fas fa-key"></i></span>
+                                    </div>
+                                    <input type="password" name="password" class="form-control  form-control-lg" placeholder="password" maxlength="100" required autocomplete="current-password">
                                 </div>
-                            </div><!--form-group-->
+                                <div class="form-group row">
+                                    <div class="col-md-6 offset-md-4">
+                                        <div class="form-check">
+                                            <input name="remember" id="remember" class="form-check-input " type="checkbox" {{ old('remember') ? 'checked' : '' }} />
 
-                            <div class="form-group row">
-                                <div class="col-md-6 offset-md-4">
-                                    <div class="form-check">
-                                        <input name="remember" id="remember" class="form-check-input" type="checkbox" {{ old('remember') ? 'checked' : '' }} />
-
-                                        <label class="form-check-label" for="remember">
-                                            @lang('Remember Me')
-                                        </label>
-                                    </div><!--form-check-->
+                                            <label class="form-check-label" for="remember">
+                                                @lang('Remember Me')
+                                            </label>
+                                        </div><!--form-check-->
+                                    </div>
                                 </div>
-                            </div><!--form-group-->
-
-                            @if(config('boilerplate.access.captcha.login'))
+                                @if(config('boilerplate.access.captcha.login'))
                                 <div class="row">
                                     <div class="col">
                                         @captcha
                                         <input type="hidden" name="captcha_status" value="true" />
                                     </div><!--col-->
                                 </div><!--row-->
-                            @endif
-
-                            <div class="form-group row mb-0">
-                                <div class="col-md-8 offset-md-4">
-                                    <button class="btn btn-primary" type="button">@lang('Login')</button>
-                                    {{-- <button class="btn btn-primary" type="submit">@lang('Login')</button> --}}
-
-                                    <x-utils.link :href="route('frontend.auth.password.request')" class="btn btn-link" :text="__('Forgot Your Password?')" />
+                                @endif
+                                <div class="form-group">
+                                    <input type="submit" value="Login" class="btn float-right login_btn btn-dark">
                                 </div>
-                            </div><!--form-group-->
-
-                            <div class="text-center">
-                                @include('frontend.auth.includes.social')
+                            </form>
+                        </div>
+                        <div class="card-footer">
+                            <div class="d-flex justify-content-center links text-dark">
+                                Don't have an account?<a href="{{ route('frontend.auth.register') }}" class="text-dark">Sign Up</a>
                             </div>
-                        </x-forms.post>
-                    </x-slot>
-                </x-frontend.card>
+                            <div class="d-flex justify-content-center">
+                                <a href="{{ route('frontend.auth.password.request') }}" class="text-dark">Forgot your password?</a>
+                            </div>
+                        </div>
+                    </div>
+
             </div><!--col-md-8-->
         </div><!--row-->
     </div><!--container-->
