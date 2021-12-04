@@ -8,6 +8,6 @@ class Official extends Model
 {
     protected $fillable = [
         'person_id',
-        'Position',
+        'position',
     ];
 }

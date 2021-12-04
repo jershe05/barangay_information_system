@@ -15,9 +15,8 @@
               Officials
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#">Dashboard</a></li>
-              <li><a class="dropdown-item" href="{{ route('admin.official.index') }}">Add</a></li>
-              <li><a class="dropdown-item" href="#">List</a></li>
+              <li><a class="dropdown-item" href="{{ route('admin.official.add') }}">Add</a></li>
+              <li><a class="dropdown-item" href="{{ route('admin.official.index') }}">List</a></li>
             </ul>
           </li>
         <li class="nav-item dropdown">
@@ -26,8 +25,8 @@
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="#">Dashboard</a></li>
-            <li><a class="dropdown-item" href="{{ route('admin.blotter.add.complainant') }}">Add</a></li>
-            <li><a class="dropdown-item" href="#">List</a></li>
+            <li><a class="dropdown-item" href="{{ route('admin.blotter.add') }}">Add</a></li>
+            <li><a class="dropdown-item" href="{{ route('admin.blotter.list') }}">List</a></li>
           </ul>
         </li>
          <li class="nav-item dropdown">

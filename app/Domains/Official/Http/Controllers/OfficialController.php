@@ -7,4 +7,9 @@ class OfficialController
     {
         return view('backend.official.index');
     }
+
+    public function add()
+    {
+        return view('backend.official.add');
+    }
 }

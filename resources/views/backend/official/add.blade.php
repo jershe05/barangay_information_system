@@ -12,8 +12,11 @@
             <x-utils.link
                 icon="c-icon cil-plus"
                 class="card-header-action"
-                :href="route('admin.official.add')"
-                :text="__('Add Official')"
+                data-toggle="modal"
+                data-target="#addPerson"
+                data-backdrop="static"
+                data-keyboard="false"
+                :text="__('Officials Table')"
             />
         </x-slot>
         <x-slot name="body">
@@ -23,11 +26,12 @@
                     <div class="col-md-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h3>Officials</h3>
+                                    <h3>Add Official</h3>
                                 </div>
                                 <div class="card-body ">
 
-                                    <livewire:official-list />
+                                    <livewire:person-table />
+
 
                                 </div>
                             </div>
@@ -39,5 +43,4 @@
         </x-slot>
 
     </x-backend.card>
-    <livewire:add-person />
 @endsection

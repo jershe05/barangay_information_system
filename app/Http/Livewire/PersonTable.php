@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Domains\Official\Models\Official;
 use App\Domains\Person\Models\Person;
 use Illuminate\Database\Eloquent\Builder;
 use Rappasoft\LaravelLivewireTables\DataTableComponent;
@@ -17,17 +18,32 @@ class PersonTable extends DataTableComponent
 
     public function addKapitan()
     {
+        if(count($this->selected) > 1)
+        {
 
+        }
+        Official::updateOrCreate([
+            'person_id' => $this->selected[0],
+            'position' => 'Kapitan'
+        ]);
     }
 
     public function addKagawad()
     {
-
+        foreach($this->selected as $kagawad)
+        {
+            Official::updateOrCreate([
+                'person_id' => $kagawad,
+                'position' => 'Kagawad'
+            ]);
+        }
     }
 
     public function columns(): array
     {
         return [
+            Column::make(__('ID'), 'id')
+                ->sortable(),
             Column::make(__('Name'))
                 ->sortable()
                 ->searchable(function($builder, $term) {
@@ -57,7 +73,8 @@ class PersonTable extends DataTableComponent
     {
 
         return Person::query()
-            ->select(DB::raw("CONCAT(first_name, ' ', middle_name,' ', last_name) AS name"),
+            ->select('id',
+                DB::raw("CONCAT(first_name, ' ', middle_name,' ', last_name) AS name"),
                 'address',
                 'gender',
                 'birthdate',

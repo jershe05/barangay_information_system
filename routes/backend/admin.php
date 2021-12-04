@@ -20,21 +20,16 @@ Route::post('blotter/store/complainant', [BlotterController::class, 'storeCompla
 
 Route::get('blotter/add', [BlotterController::class, 'addBlotter'])
     ->name('blotter.add');
-
-Route::post('blotter/store', [BlotterController::class, 'storeBlotter'])
-    ->name('blotter.store');
-
-Route::get('blotter/add/suspect/{blotter}', [BlotterController::class, 'addSuspect'])
-    ->name('blotter.add.suspect');
-
-Route::post('blotter/store/suspect/{blotter}', [BlotterController::class, 'storeSuspect'])
-    ->name('blotter.store.suspect');
-
-Route::get('blotter/add/case/{blotter}', [BlotterController::class, 'createCase'])
-    ->name('blotter.add.case');
+Route::get('blotter/show/{blotter}', [BlotterController::class, 'show'])
+    ->name('blotter.show');
+Route::get('blotter/list', [BlotterController::class, 'list'])
+    ->name('blotter.list');
 
 Route::get('official', [OfficialController::class, 'index'])
     ->name('official.index');
+
+Route::get('official/add', [OfficialController::class, 'add'])
+    ->name('official.add');
 
 });
 

@@ -10,6 +10,7 @@ class Blotter extends Model
     protected $fillable = [
         'insident_address',
         'date',
+        'time',
         'report',
         'updated_at'
     ];

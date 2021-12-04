@@ -16,8 +16,10 @@ class CreateBlottersTable extends Migration
         Schema::create('blotters', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('insident_address')->nullable();
-            $table->dateTime('date')->nullable();
+            $table->date('date')->nullable();
+            $table->time('time')->nullable();
             $table->text('report')->nullable();
+            $table->integer('status')->default(0);
             $table->timestamps();
         });
     }
