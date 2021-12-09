@@ -1,4 +1,4 @@
 
-<x-utils.view-button :href="route('admin.blotter.show',['blotter' => $model])" />
+<x-utils.view-button :href="route('admin.blotter.show',['blotter' => $model->id])" />
 
 

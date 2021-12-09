@@ -51,7 +51,7 @@
                           <span aria-hidden="true">&times;</span>
                         </button>
                       </div>
-                    {{-- <livewire:messaging.show-messages  /> --}}
+                   
                   </div>
                 </div>
               </div>

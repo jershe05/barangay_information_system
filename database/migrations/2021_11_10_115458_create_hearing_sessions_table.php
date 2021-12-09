@@ -19,7 +19,7 @@ class CreateHearingSessionsTable extends Migration
             $table->date('date')->nullable();
             $table->time('time')->nullable();
             $table->text('description')->nullable();
-            $table->integer('result')->unsigned()->nullable()->default(12);
+            $table->integer('result')->unsigned()->nullable()->default(12)->default('1');
             $table->bigInteger('official')->nullable();
             $table->timestamps();
         });

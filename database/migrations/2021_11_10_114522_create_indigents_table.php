@@ -15,7 +15,7 @@ class CreateIndigentsTable extends Migration
     {
         Schema::create('indigents', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('family_id')->nullable();
+            $table->bigInteger('person_id')->nullable();
             $table->text('description')->nullable();
             $table->timestamps();
         });

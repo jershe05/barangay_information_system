@@ -12,34 +12,39 @@
             <div class="row">
                 <div class="card col-sm m-3">
                     <div class="card-header">
-                       Total Blotters
+                       Blotters
                     </div>
                     <div class="card-body">
-                        <h1 class="card-title text-primary">100</h1>
+                        <h1 class="card-title text-primary">Active : {{ $blotters->where('status', 1)->count() }}</h1>
+                        <h3 class="text-success">Resolved : {{ $blotters->where('status', 3)->count() }}</h3>
+                        <h3 class="text-danger">Unresolved : {{ $blotters->where('status', 2)->count() }}</h3>
                     </div>
                 </div>
                 <div class="card col-sm m-3">
                     <div class="card-header">
-                        Total Hearings
+                        Hearings
                     </div>
                     <div class="card-body">
-                        <h1 class="card-title text-primary">100</h1>
+                        <h1 class="card-title text-primary">Active : {{ $hearings->where('result', 1)->count() }}</h1>
+                        <h3 class="text-success">Resolved : {{ $hearings->where('result', 3)->count() }}</h3>
+                        <h3 class="text-danger">Unresolved : {{ $hearings->where('result', 2)->count() }}</h3>
                     </div>
                 </div>
                 <div class="card col-sm m-3">
                     <div class="card-header">
-                        Total Citizens
+                        Citizens
                     </div>
                     <div class="card-body">
-                        <h1 class="card-title text-primary">100</h1>
+                        <h1 class="card-title text-primary">Total : {{ $citizens->count() }}</h1>
+
                     </div>
                 </div>
                 <div class="card col-sm m-3">
                     <div class="card-header">
-                        Total Indigent Families
+                        Indigents
                     </div>
                     <div class="card-body">
-                        <h1 class="card-title text-primary">100</h1>
+                        <h1 class="card-title text-primary">Total : {{ $indigents->count() }}</h1>
                     </div>
                 </div>
             </div>

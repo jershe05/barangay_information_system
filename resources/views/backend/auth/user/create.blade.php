@@ -107,11 +107,11 @@
                         </div>
                     </div>
 
-                    @include('backend.auth.includes.roles')
+                    {{-- @include('backend.auth.includes.roles') --}}
 
-                    @if (!config('boilerplate.access.user.only_roles'))
+                    {{-- @if (!config('boilerplate.access.user.only_roles'))
                         @include('backend.auth.includes.permissions')
-                    @endif
+                    @endif --}}
                 </div>
             </x-slot>
 

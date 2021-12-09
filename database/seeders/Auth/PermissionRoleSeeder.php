@@ -76,6 +76,7 @@ class PermissionRoleSeeder extends Seeder
                 'description' => 'Change User Passwords',
                 'sort' => 6,
             ]),
+
         ]);
 
         // Assign Permissions to other Roles

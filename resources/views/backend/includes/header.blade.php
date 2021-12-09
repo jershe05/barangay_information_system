@@ -8,7 +8,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link active" aria-current="page" href="{{ route('admin.dashboard') }}">Home</a>
         </li>
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
@@ -24,7 +24,7 @@
             Blotter
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Dashboard</a></li>
+
             <li><a class="dropdown-item" href="{{ route('admin.blotter.add') }}">Add</a></li>
             <li><a class="dropdown-item" href="{{ route('admin.blotter.list') }}">List</a></li>
           </ul>
@@ -34,10 +34,9 @@
             Hearings
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-           <li><a class="dropdown-item" href="#">Dashboard</a></li>
-            <li><a class="dropdown-item" href="#">Add</a></li>
-            <li><a class="dropdown-item" href="#">Active List</a></li>
-            <li><a class="dropdown-item" href="#">Pending List</a></li>
+
+            <li><a class="dropdown-item" href="{{ route('admin.hearing.add') }}">Add</a></li>
+            <li><a class="dropdown-item" href="{{ route('admin.hearing.schedules') }}">Schedules</a></li>
           </ul>
         </li>
 
@@ -46,20 +45,9 @@
             Citizens
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Dashboard</a></li>
-            <li><a class="dropdown-item" href="#">Add</a></li>
-            <li><a class="dropdown-item" href="#">List</a></li>
-          </ul>
-        </li>
 
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
-             Sensus
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Dashboard</a></li>
             <li><a class="dropdown-item" href="#">Add</a></li>
-            <li><a class="dropdown-item" href="#">List</a></li>
+            <li><a class="dropdown-item" href="{{ route('admin.citizen.list') }}">List</a></li>
           </ul>
         </li>
 
@@ -68,23 +56,26 @@
              Indigents
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Dashboard</a></li>
-            <li><a class="dropdown-item" href="#">Add</a></li>
-            <li><a class="dropdown-item" href="#">List</a></li>
+
+            <li><a class="dropdown-item" href="{{ route('admin.indigent.add') }}">Add</a></li>
+            <li><a class="dropdown-item" href="{{ route('admin.indigent.list') }}">List</a></li>
           </ul>
         </li>
-
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
-             Certicates
+             Accounts
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Dashboard</a></li>
-            <li><a class="dropdown-item" href="#">Add</a></li>
-            <li><a class="dropdown-item" href="#">List</a></li>
+
+            <li><a class="dropdown-item" href="{{ route('admin.auth.user.index') }}">Users</a></li>
+            <li><a class="dropdown-item" href="{{ route('admin.indigent.list') }}">List</a></li>
           </ul>
         </li>
       </ul>
+      <div class="float-right">
+          <a href="{{ route('frontend.auth.logout') }}" class="btn btn-primary float-right ml-5">Log-out</a>
+      </div>
+
     </div>
   </div>
 </nav>

@@ -37,6 +37,8 @@ class PersonTable extends DataTableComponent
                 'position' => 'Kagawad'
             ]);
         }
+
+        $this->resetAll();
     }
 
     public function columns(): array
@@ -72,8 +74,7 @@ class PersonTable extends DataTableComponent
     public function query(): Builder
     {
 
-        return Person::query()
-            ->select('id',
+        return Person::select('id',
                 DB::raw("CONCAT(first_name, ' ', middle_name,' ', last_name) AS name"),
                 'address',
                 'gender',

@@ -2,6 +2,7 @@
 namespace App\Domains\Person\Models;
 
 use App\Domains\Person\Models\Traits\Relationships\hasSuspects;
+use App\Domains\Suspect\Models\Suspect;
 use Illuminate\Database\Eloquent\Model;
 
 class Person extends Model
@@ -22,4 +23,9 @@ class Person extends Model
         'updated_at',
         'created_at'
     ];
+
+    public function suspect()
+    {
+        return $this->hasMany(Suspect::class, 'person_id', 'id');
+    }
 }

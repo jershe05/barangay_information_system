@@ -19,7 +19,7 @@ class CreateBlottersTable extends Migration
             $table->date('date')->nullable();
             $table->time('time')->nullable();
             $table->text('report')->nullable();
-            $table->integer('status')->default(0);
+            $table->integer('status')->default(1);
             $table->timestamps();
         });
     }

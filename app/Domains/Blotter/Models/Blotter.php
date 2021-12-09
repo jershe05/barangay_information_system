@@ -2,6 +2,7 @@
 
 namespace App\Domains\Blotter\Models;
 
+use App\Domains\Hearing\Models\HearingSession;
 use App\Domains\Suspect\Models\Suspect;
 use Illuminate\Database\Eloquent\Model;
 
@@ -18,5 +19,10 @@ class Blotter extends Model
     public function suspect()
     {
         return $this->hasMany(Suspect::class);
+    }
+
+    public function hearings()
+    {
+        return $this->hasMany(HearingSession::class, 'case_id', 'id');
     }
 }
